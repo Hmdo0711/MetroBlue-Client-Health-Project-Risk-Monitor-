@@ -177,9 +177,9 @@ describe('status roll-up', () => {
   test('no findings -> Healthy', () => {
     assert.equal(deriveStatus([]).status, STATUS.HEALTHY);
   });
-  test('watch items alone stay Healthy until 3 of them', () => {
-    assert.equal(deriveStatus([f('watch'), f('watch')]).status, STATUS.HEALTHY);
-    const r = deriveStatus([f('watch'), f('watch'), f('watch')]);
+  test('watch items alone stay Healthy until 5 of them', () => {
+    assert.equal(deriveStatus(Array(4).fill(f('watch'))).status, STATUS.HEALTHY);
+    const r = deriveStatus(Array(5).fill(f('watch')));
     assert.equal(r.status, STATUS.AT_RISK);
     assert.match(r.explanation, /escalate to At Risk/);
   });

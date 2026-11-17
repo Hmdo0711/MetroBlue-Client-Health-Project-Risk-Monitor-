@@ -60,7 +60,7 @@ export const DEFAULT_RULES = Object.freeze({
   // Overall status roll-up
   status: {
     criticalIfRiskFindingsAtLeast: 3, // several At Risk signals together -> Critical
-    atRiskIfWatchFindingsAtLeast: 3, // several Watch signals together -> At Risk
+    atRiskIfWatchFindingsAtLeast: 5, // several Watch signals together -> At Risk
   },
 
   // Risk score weights (used for sorting/prioritising, not for status)

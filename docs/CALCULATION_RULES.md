@@ -133,7 +133,7 @@ Rules are applied in this order. The first one that matches decides the status:
 | 1 | Any **Critical** finding                     | **Critical** |
 | 2 | **3 or more** At Risk findings                | **Critical** |
 | 3 | Any **At Risk** finding                      | **At Risk**  |
-| 4 | **3 or more** Watch findings                  | **At Risk**  |
+| 4 | **5 or more** Watch findings                  | **At Risk**  |
 | 5 | Otherwise                                    | **Healthy**  |
 
 Rows 2 and 4 cover projects with many smaller problems, which together warrant the higher status.
