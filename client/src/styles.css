@@ -44,8 +44,7 @@ button, input, select { font: inherit; color: inherit; }
 }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 220px; }
 .logo {
-  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8); font-weight: 800; font-size: 13px;
+  width: auto; max-width: 140px; height: 34px; border-radius: 8px; object-fit: contain;
 }
 .brand-name { font-weight: 700; font-size: 15px; }
 .brand-sub { font-size: 11px; opacity: 0.7; }

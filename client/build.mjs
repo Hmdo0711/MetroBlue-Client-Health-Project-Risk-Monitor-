@@ -12,6 +12,8 @@ fs.mkdirSync(dist, { recursive: true });
 const copyStatic = () => {
   fs.copyFileSync(path.join(root, 'index.html'), path.join(dist, 'index.html'));
   fs.copyFileSync(path.join(root, 'src', 'styles.css'), path.join(dist, 'styles.css'));
+  const publicDir = path.join(root, 'public');
+  if (fs.existsSync(publicDir)) fs.cpSync(publicDir, dist, { recursive: true });
 };
 
 const options = {
