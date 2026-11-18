@@ -104,11 +104,8 @@ export function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <span className="logo" aria-hidden="true">
-            MB
-          </span>
+                <img className="logo" src="/logo.png" alt="" />
           <div>
-            <div className="brand-name">MetroBlue</div>
             <div className="brand-sub">Client Health &amp; Project Risk</div>
           </div>
         </div>
