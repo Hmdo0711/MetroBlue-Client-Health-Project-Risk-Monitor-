@@ -191,8 +191,13 @@ describe('status roll-up', () => {
   test('any critical finding -> Critical', () => {
     assert.equal(deriveStatus([f('critical')]).status, STATUS.CRITICAL);
   });
-  test('score is weighted and capped at 100', () => {
-    assert.equal(deriveStatus([f('watch'), f('risk'), f('critical')]).score, 14);
+    test('score is weighted and capped at 100', () => {
+    // weights: watch 3, risk 15, critical 45
+    assert.equal(deriveStatus([f('watch')]).score, 3);
+    assert.equal(deriveStatus([f('risk')]).score, 15);
+    assert.equal(deriveStatus([f('critical')]).score, 45);
+    assert.equal(deriveStatus([f('watch'), f('risk'), f('critical')]).score, 63); // 3 + 15 + 45
+    assert.equal(deriveStatus([f('critical'), f('critical'), f('risk')]).score, 100); // 105, capped
     assert.equal(deriveStatus(Array(20).fill(f('critical'))).score, 100);
   });
   test('thresholds are configurable', () => {
