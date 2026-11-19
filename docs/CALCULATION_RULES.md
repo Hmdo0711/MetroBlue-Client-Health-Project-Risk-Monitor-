@@ -148,7 +148,7 @@ with them early.
 The risk score ranks projects within the same status. It never changes the status.
 
 ```
-score = 1 × watch findings + 3 × at-risk findings + 10 × critical findings   (maximum 100)
+score = 3 × watch findings + 15 × at-risk findings + 45 × critical findings   (maximum 100)
 ```
 
 Lists are sorted by status (Critical → At Risk → Healthy), then by risk score from highest to lowest.

@@ -64,7 +64,7 @@ export const DEFAULT_RULES = Object.freeze({
   },
 
   // Risk score weights (used for sorting/prioritising, not for status)
-  scoreWeights: { watch: 1, risk: 3, critical: 10 },
+  scoreWeights: { watch: 3, risk: 15, critical: 45 },
 });
 
 export function mergeRules(base, override) {
